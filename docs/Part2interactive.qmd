@@ -1,0 +1,63 @@
+---
+title: "Part2TuesdayReview"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(ggplot2)
+library(knitr)
+library(here)
+```
+
+```{r}
+mack_verts <- read_csv(here::here("data", "AS00601.csv"))
+mack_verts
+                       
+```
+```{r}
+janitor::clean_names(mack_verts)
+```
+```{r}
+mc_wt_5 <- mack_verts$WEIGHT[5]
+```
+
+```{r}
+mc_length_8_20 <- mack_verts$LENGTH1[8:20]
+```
+
+```{r}
+mc_dates <- c(mack_verts$SAMPLEDATE)
+view(mc_dates)
+```
+
+```{r}
+mc_salamanders <- mack_verts %>%
+  dplyr::filter(SPECIES == 'DITE')
+```
+
+```{r}
+ggplot(mc_salamanders, aes(x = LENGTH1, y = WEIGHT)) +
+       geom_point()
+
+```
+```{r}
+mc_trout <- mack_verts %>%
+  dplyr::filter(SPECIES == 'ONCL')
+  
+```
+
+```{r}
+ggplot(data = mc_trout, aes(x = LENGTH1, y = WEIGHT, colour = REACH)) +
+  geom_point() +
+  facet_wrap(~ REACH)
+ 
+```
+
+```{r}
+
+
+```
+
