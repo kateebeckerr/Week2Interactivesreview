@@ -1,0 +1,61 @@
+---
+title: "Day 2 Activies Review"
+format: html
+editor: visual
+---
+
+## Activities 
+
+```{r}
+vec1 <- c(2, 5, 9, 10, 8, 12, 1, 0)
+```
+
+```{r}
+class(vec1)
+typeof(vec1)
+vec_1_e3 <- vec1[3]
+vec_1_e1 <- vec1[1]
+vec_1_e5to7 <- vec1[5:7]
+vec1_char <- is.character(vec1)
+class(vec1_char)
+```
+
+```{r}
+vec_2 <- c(town = "Santa Barbara", location = "Rincon", swell = "south")
+vec_2
+class(vec_2)
+length(vec_2)
+```
+
+```{r}
+vec_2[2]
+```
+
+```{r}
+df_1 <- data.frame( region = c("A", "B", "C", "D"), species = c("otter", "great white", "sea lion", "gray whale"), count = c(12, 2, 36, 6))
+```
+
+```{r}
+df_1
+```
+
+```{r}
+class(df_1)
+speciesdf <- df_1[3]
+as.numeric(speciesdf)
+class(speciesdf)
+```
+
+```{r}
+as.numeric(speciesdf[1])
+```
+
+```{r}
+class(speciesdf[1])
+```
+
+```{r}
+max_val <- max(df_1[3])
+```
+
+## 
